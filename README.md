@@ -1,127 +1,98 @@
-# 🔍 UI Sentinel - Visual UI Test Automation
+# 🔍 UI Sentinel - Görsel UI Test Otomasyonu
 
-**UI Sentinel** is an advanced visual UI test automation tool developed by AIVisionTest. It automatically tests the visual consistency of web pages and generates detailed reports.
+**UI Sentinel**, web sayfalarının görsel tutarlılığını test eden gelişmiş bir otomasyon aracıdır. Selenium WebDriver ve OpenCV kullanarak pixel-perfect karşılaştırmalar yapar.
 
-[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Selenium](https://img.shields.io/badge/Selenium-4.0+-green.svg)](https://selenium-python.readthedocs.io/)
-[![OpenCV](https://img.shields.io/badge/OpenCV-4.0+-red.svg)](https://opencv.org/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+## ✨ Özellikler
 
-## ✨ Features
+### 🎯 Temel Özellikler
+- **Görsel Karşılaştırma**: Baseline ve test görüntüleri arasında pixel-perfect karşılaştırma
+- **Otomatik Screenshot**: Selenium ile otomatik ekran görüntüsü alma
+- **Akıllı Pop-up Yönetimi**: Google gibi sitelerde pop-up'ları otomatik kapatma
+- **Tema Tutarlılığı**: Light/dark tema değişikliklerini kontrol etme
+- **Detaylı Raporlama**: HTML, JSON ve PDF formatlarında kapsamlı raporlar
 
-### 🎯 **Core Features**
-- **Automatic screenshot capture**: Precise image capture with Selenium WebDriver
-- **Pixel-perfect comparison**: Advanced visual analysis with OpenCV
-- **Multi-page support**: Test multiple pages simultaneously
-- **Smart pop-up management**: Automatic pop-up closing and theme consistency
-- **Detailed reporting**: Comprehensive reports in HTML, JSON and PDF formats
+### 📊 Raporlama Sistemi
+- **HTML Raporları**: İnteraktif, zoom özellikli detaylı raporlar
+- **PDF İndirme**: Tek tıkla PDF oluşturma butonu
+- **Görsel Analiz**: Fark haritaları ve karşılaştırma görüntüleri
+- **Metrik Kartları**: Benzerlik oranı, fark yüzdesi, piksel sayısı
 
-### 🔍 **Advanced Visual Comparison**
-- **Color-coded difference maps**: Visually highlight changed areas
-- **Similarity scoring**: Percentage-based similarity calculation
-- **Tolerance settings**: Customizable threshold values per page
-- **Optimized visual analysis**: Difference maps and overlays scaled 1.2x (sharper)
+### 🛠️ Teknik Özellikler
+- **OpenCV**: Görüntü işleme ve karşılaştırma
+- **Selenium WebDriver**: Tarayıcı otomasyonu
+- **Jinja2**: HTML şablon motoru
+- **Responsive Design**: Mobil uyumlu raporlar
 
-### 📊 **Reporting System**
-- **English reports**: Default English language support
-- **Multiple formats**: HTML, JSON and PDF reports
-- **Visual comparison**: 4-grid layout
-- **Zoom functionality**: Magnification in difference maps
-- **Responsive design**: Mobile-friendly report interface
+## 🚀 Hızlı Başlangıç
 
-### 🎨 **Visual Comparison System**
-- **4-grid layout**: Reference, Test, Difference Map, Overlay
-- **Color coding**:
-  - **🟠 Orange**: Changed areas (attention required)
-  - **⚪ White**: Unchanged areas (safe)
-- **Optimized visual analysis**: Difference maps and overlays scaled 1.2x (sharper)
-
-## 🚀 Quick Start
-
-### Prerequisites
+### Gereksinimler
 ```bash
-Python 3.8+
-Chrome Browser
-ChromeDriver (automatically managed)
+# Python 3.8+ gerekli
+python --version
+
+# Chrome tarayıcısı gerekli
+# ChromeDriver otomatik indirilir
 ```
 
-### Installation
-
-1. **Clone the repository**
+### Kurulum
 ```bash
-git clone https://github.com/yourusername/AIVisionTest.git
+# Repository'yi klonla
+git clone https://github.com/KULLANICI_ADIN/AIVisionTest.git
 cd AIVisionTest
-```
 
-2. **Install dependencies**
-```bash
+# Bağımlılıkları yükle
 pip install -r requirements.txt
 ```
 
-3. **Run tests**
+### Kullanım
 ```bash
+# Testleri çalıştır
 python run_tests.py
+
+# Raporları görüntüle
+# reports/ klasöründeki HTML dosyalarını tarayıcıda aç
 ```
 
-4. **View reports**
-```bash
-# Open the latest HTML report
-start reports/ui_sentinel_report_*.html
-```
-
-## 📁 Project Structure
+## 📁 Proje Yapısı
 
 ```
 AIVisionTest/
-├── src/
-│   ├── screenshot_capture.py    # Screenshot capture
-│   ├── image_comparison.py      # Visual comparison
-│   ├── report_generator.py      # Report generation
-│   └── visual_test.py          # Main test logic
-├── config/
-│   ├── test_config.json        # Test settings
-│   └── language_config.json    # Language settings
-├── baseline/                   # Reference images
-├── screenshots/               # Test images
-├── results/                   # Difference images
-├── reports/                   # Generated reports
-├── dashboard/                 # Web dashboard
-├── tests/                     # Test files
-├── requirements.txt           # Python dependencies
-└── README.md                 # This file
+├── src/                    # Ana kaynak kodlar
+│   ├── visual_test.py      # Test motoru
+│   ├── screenshot_capture.py # Screenshot alma
+│   ├── image_comparison.py # Görsel karşılaştırma
+│   └── report_generator.py # Rapor oluşturma
+├── config/                 # Konfigürasyon dosyaları
+│   ├── test_config.json    # Test ayarları
+│   └── language_config.json # Dil ayarları
+├── baseline/               # Referans görüntüler
+├── screenshots/            # Test görüntüleri
+├── results/                # Fark görüntüleri
+├── reports/                # Oluşturulan raporlar
+└── tests/                  # Test dosyaları
 ```
 
-## ⚙️ Configuration
+## ⚙️ Konfigürasyon
 
-### Test Settings (`config/test_config.json`)
+### Test Ayarları (`config/test_config.json`)
 ```json
 {
-  "browser": {
-    "name": "chrome",
-    "headless": false,
-    "window_size": {
-      "width": 1920,
-      "height": 1080
-    }
-  },
   "test_pages": [
     {
       "name": "google_homepage",
       "url": "https://www.google.com",
-      "wait_time": 3,
-      "description": "Google homepage test"
+      "tolerance": 15,
+      "threshold": 0.7
     }
   ],
   "comparison_settings": {
-    "threshold": 0.80,
-    "tolerance": 10,
-    "highlight_differences": true,
-    "save_differences": true
+    "threshold": 0.95,
+    "tolerance": 5
   }
 }
 ```
 
-### Language Settings (`config/language_config.json`)
+### Dil Ayarları (`config/language_config.json`)
 ```json
 {
   "en": {
@@ -139,221 +110,106 @@ AIVisionTest/
 }
 ```
 
-## 📊 Reporting System
+## 📊 Raporlama Sistemi
 
-### HTML Report
-- **Modern design**: Professional appearance with Inter font
-- **Statistics cards**: Hover effects and color coding
-- **Visual comparison**: 4-grid layout
-- **Color legend**: Guide explaining difference types
-- **Lightbox**: Full-screen visual viewing
-- **Responsive**: Mobile-friendly design
+### HTML Raporları
+- **İnteraktif Görseller**: Tıklayarak büyütme
+- **Zoom Özelliği**: Fark haritalarını yakınlaştırma
+- **Responsive Design**: Mobil uyumlu
+- **PDF İndirme**: Tek tıkla PDF oluşturma
 
-### JSON Report
-```json
+### Rapor İçeriği
+- **Test Özeti**: Toplam, geçen, kalan test sayıları
+- **Detaylı Metrikler**: Benzerlik oranı, fark yüzdesi
+- **Görsel Karşılaştırma**: Baseline vs Test görüntüleri
+- **Fark Haritası**: Değişen alanların görselleştirilmesi
+- **Akıllı Analiz**: Otomatik değişiklik tespiti
+
+## 🎨 Görsel Karşılaştırma Sistemi
+
+### Karşılaştırma Algoritması
+1. **Görüntü Ön İşleme**: Boyut standardizasyonu
+2. **Pixel Karşılaştırma**: OpenCV ile piksel bazlı analiz
+3. **Fark Tespiti**: Eşik değeri kontrolü
+4. **Sonuç Analizi**: Benzerlik oranı hesaplama
+
+### Özel Ayarlar
+- **Google**: Pop-up kapatma ve tema kontrolü
+- **GitHub**: Dinamik içerik toleransı
+- **Stack Overflow**: Responsive tasarım uyumu
+
+## 📈 Performans
+
+### Test Süreleri
+- **Tek Sayfa**: ~30-60 saniye
+- **3 Sayfa**: ~2-3 dakika
+- **Rapor Oluşturma**: ~10-15 saniye
+
+### Bellek Kullanımı
+- **Screenshot**: ~2-5 MB per sayfa
+- **Fark Görüntüsü**: ~1-3 MB per sayfa
+- **HTML Rapor**: ~8-15 MB
+
+## 🔧 Geliştirme
+
+### Yeni Test Ekleme
+```python
+# config/test_config.json'a ekle
 {
-  "project_name": "UI Sentinel - Powered by AIVisionTest",
-  "summary": {
-    "total_tests": 3,
-    "passed_tests": 3,
-    "failed_tests": 0,
-    "pass_rate": 100.0
-  },
-  "results": [
-    {
-      "page_name": "google_homepage",
-      "passed": true,
-      "similarity_score": 0.8099,
-      "difference_percentage": 19.01
-    }
-  ]
+  "name": "yeni_sayfa",
+  "url": "https://example.com",
+  "tolerance": 10,
+  "threshold": 0.9
 }
 ```
 
-## 🎨 Visual Comparison System
-
-### Color Coding
-- **🟠 Orange**: Changed areas (attention required)
-- **⚪ White**: Unchanged areas (safe)
-
-### Visual Layout
-1. **Reference Image**: Baseline image
-2. **Test Image**: Current state
-3. **Difference Map**: Color comparison (1.2x scaled)
-4. **Overlay View**: Transparent overlay (1.2x scaled)
-
-### Difference Analysis System
-- **Automatic evaluation**: Analysis based on difference percentage
-- **Explanatory texts**: Meaning of changes
-- **Categorized results**: Major, minor, or none
-- **User guidance**: Guide on what to do
-
-## 🔧 Performance and Features
-
-### Test Performance
-- **Fast comparison**: OpenCV optimization
-- **Memory efficient**: Optimized for large images
-- **Parallel processing**: Multiple page tests
-
-### Reliability
-- **Theme fixing**: For dynamic sites like Google
-- **Error tolerance**: Resilient to network issues
-- **Automatic cleanup**: Clean temporary files
-
-## 📈 Dashboard Features
-
-- **Real-time monitoring**: Live tracking of test results
-- **Modern interface**: Clean and user-friendly design
-- **Auto-refresh**: Automatic data updates
-- **Responsive design**: Compatible with all devices
-
-## 🛠️ Development
-
-### Adding New Tests
-1. Add new page to `config/test_config.json`
-2. Place reference image in `baseline/` folder
-3. Run the test
-
-### Adding Language Support
-1. Add new language to `config/language_config.json`
-2. Translate all texts
-3. Update report generator
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🤝 Contributing
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📋 GitHub Deployment Steps
-
-### Step 1: Prepare Repository
-```bash
-# Initialize git (if not already done)
-git init
-
-# Add all files
-git add .
-
-# Create initial commit
-git commit -m "Initial commit: UI Sentinel Visual Test Automation"
-```
-
-### Step 2: Create GitHub Repository
-1. Go to [GitHub](https://github.com)
-2. Click "New repository"
-3. Name: `AIVisionTest`
-4. Description: `Advanced visual UI test automation tool with Selenium and OpenCV`
-5. Make it **Public** or **Private**
-6. **Don't** initialize with README (we already have one)
-7. Click "Create repository"
-
-### Step 3: Push to GitHub
-```bash
-# Add remote origin
-git remote add origin https://github.com/yourusername/AIVisionTest.git
-
-# Push to main branch
-git branch -M main
-git push -u origin main
-```
-
-### Step 4: Add GitHub Actions (Optional)
-Create `.github/workflows/test.yml`:
-```yaml
-name: UI Tests
-
-on: [push, pull_request]
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v2
-    
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.8'
-    
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-    
-    - name: Install Chrome
-      run: |
-        wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
-        echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
-        apt-get update
-        apt-get install -y google-chrome-stable
-    
-    - name: Run tests
-      run: python run_tests.py
-```
-
-### Step 5: Add Repository Badges
-Add these to your README:
-```markdown
-[![Tests](https://github.com/yourusername/AIVisionTest/workflows/UI%20Tests/badge.svg)](https://github.com/yourusername/AIVisionTest/actions)
-[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-```
-
-### Step 6: Create Release
-1. Go to "Releases" in your GitHub repository
-2. Click "Create a new release"
-3. Tag: `v1.0.0`
-4. Title: `UI Sentinel v1.0.0`
-5. Description: Add release notes
-6. Upload `requirements.txt` and other important files
-7. Publish release
-
-## 🎯 Usage Examples
-
-### Basic Test Run
-```bash
-python run_tests.py
-```
-
-### Custom Configuration
+### Özel Pop-up Yönetimi
 ```python
-from src.visual_test import VisualTest
-
-# Create test instance
-test = VisualTest()
-
-# Run with custom settings
-test.run_tests(
-    pages=['google_homepage', 'github_homepage'],
-    threshold=0.85,
-    tolerance=5
-)
+# src/screenshot_capture.py'da ekle
+def handle_custom_popup(driver):
+    # Özel pop-up kapatma mantığı
+    pass
 ```
 
-### Generate Reports Only
-```python
-from src.report_generator import ReportGenerator
+## 📤 Paylaşım
 
-generator = ReportGenerator()
-reports = generator.generate_reports(comparison_results)
-```
+### HTML Rapor Paylaşımı
+1. **Netlify**: Drag & drop ile yükleme
+2. **GitHub Pages**: Repository'den otomatik yayınlama
+3. **PDF**: Tarayıcıdan PDF olarak kaydetme
 
-## 📞 Support
+### Rapor Formatları
+- **HTML**: İnteraktif, zoom özellikli
+- **PDF**: Kompakt, yazdırılabilir
+- **JSON**: API entegrasyonu için
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/AIVisionTest/issues)
-- **Documentation**: [Wiki](https://github.com/yourusername/AIVisionTest/wiki)
-- **Email**: your-email@example.com
+## 🤝 Katkıda Bulunma
+
+### Geliştirme Süreci
+1. Fork yapın
+2. Feature branch oluşturun (`git checkout -b feature/yeni-ozellik`)
+3. Commit yapın (`git commit -am 'Yeni özellik eklendi'`)
+4. Push yapın (`git push origin feature/yeni-ozellik`)
+5. Pull Request oluşturun
+
+### Kod Standartları
+- **Python**: PEP 8 uyumlu
+- **HTML/CSS**: Responsive design
+- **JavaScript**: ES6+ standartları
+
+## 📄 Lisans
+
+Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için `LICENSE` dosyasına bakın.
+
+## 🙏 Teşekkürler
+
+- **OpenCV**: Görüntü işleme kütüphanesi
+- **Selenium**: Web otomasyon framework'ü
+- **Jinja2**: Template engine
+- **Chrome WebDriver**: Tarayıcı otomasyonu
 
 ---
 
-**UI Sentinel** - Test your web applications' visual consistency safely with AIVisionTest! 🚀
+**UI Sentinel** - Görsel UI test otomasyonunda güvenilir çözüm 🚀
 
 
