@@ -184,6 +184,34 @@ class ReportGenerator:
                     z-index: 1;
                 }
                 
+                /* PDF Download Button */
+                .download-pdf-btn {
+                    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+                    color: white;
+                    border: none;
+                    padding: 12px 24px;
+                    border-radius: 25px;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+                    position: relative;
+                    z-index: 1;
+                    margin-top: 15px;
+                }
+                
+                .download-pdf-btn:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+                    background: linear-gradient(135deg, #ff5252 0%, #d63031 100%);
+                }
+                
+                .download-pdf-btn:active {
+                    transform: translateY(0);
+                    box-shadow: 0 2px 10px rgba(255, 107, 107, 0.4);
+                }
+                
                 /* Enhanced Statistic Cards */
                 .stats-grid {
                     display: grid;
@@ -355,9 +383,9 @@ class ReportGenerator:
                 }
                 
                 /* Enhanced Visual Comparison Section */
-                .visual-comparison {
-                    margin-top: 30px;
-                }
+                                    .visual-comparison {
+                        margin-top: 15px;
+                    }
                 
                 /* Test Summary Cards */
                 .test-summary-cards {
@@ -421,13 +449,13 @@ class ReportGenerator:
 
                 /* Side-by-Side Image Comparison */
                 .image-comparison-section {
-                    margin-bottom: 30px;
+                    margin-bottom: 15px;
                 }
                 
                 .side-by-side-images {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
-                    gap: 30px;
+                    gap: 15px;
                 }
                 
                 .image-container {
@@ -458,7 +486,7 @@ class ReportGenerator:
 
                 /* Single Difference Map */
                 .difference-map-section {
-                    margin-bottom: 30px;
+                    margin-bottom: 15px;
                 }
                 
                 .difference-map-container {
@@ -484,9 +512,9 @@ class ReportGenerator:
                 .color-legend-simple {
                     display: flex;
                     justify-content: center;
-                    gap: 40px;
-                    margin-bottom: 30px;
-                    padding: 20px;
+                    gap: 20px;
+                    margin-bottom: 15px;
+                    padding: 10px;
                     background: #f8f9fa;
                     border-radius: 12px;
                     border: 1px solid #e9ecef;
@@ -718,6 +746,219 @@ class ReportGenerator:
                         height: auto;
                     }
                 }
+                
+                /* Print Styles for PDF */
+                @media print {
+                    .download-pdf-btn {
+                        display: none !important;
+                    }
+                    
+                    body {
+                        background: white !important;
+                        color: black !important;
+                        font-size: 12px !important;
+                        line-height: 1.3 !important;
+                        margin: 0 !important;
+                        padding: 10px !important;
+                    }
+                    
+                    .container {
+                        max-width: none !important;
+                        padding: 0 !important;
+                        margin: 0 !important;
+                    }
+                    
+                    .header {
+                        background: white !important;
+                        color: black !important;
+                        box-shadow: none !important;
+                        padding: 15px !important;
+                        margin-bottom: 15px !important;
+                        border: 2px solid #333 !important;
+                    }
+                    
+                    .header h1 {
+                        font-size: 24px !important;
+                        margin-bottom: 5px !important;
+                    }
+                    
+                    .header .subtitle,
+                    .header .description {
+                        font-size: 14px !important;
+                        margin-bottom: 5px !important;
+                    }
+                    
+                    .header .date {
+                        font-size: 12px !important;
+                    }
+                    
+                    .stats-grid {
+                        grid-template-columns: repeat(4, 1fr) !important;
+                        gap: 10px !important;
+                        margin-bottom: 20px !important;
+                    }
+                    
+                    .stat-card {
+                        box-shadow: none !important;
+                        border: 1px solid #ccc !important;
+                        padding: 10px !important;
+                    }
+                    
+                    .stat-card .icon {
+                        font-size: 20px !important;
+                        margin-bottom: 5px !important;
+                    }
+                    
+                    .stat-card .value {
+                        font-size: 18px !important;
+                        margin-bottom: 3px !important;
+                    }
+                    
+                    .stat-card .label {
+                        font-size: 10px !important;
+                    }
+                    
+                    .report-content {
+                        box-shadow: none !important;
+                        border: 1px solid #ccc !important;
+                        padding: 15px !important;
+                        margin-top: 15px !important;
+                    }
+                    
+                    .test-detail {
+                        padding: 10px !important;
+                        margin-bottom: 15px !important;
+                        page-break-inside: avoid !important;
+                        border: 1px solid #ddd !important;
+                    }
+                    
+                    .test-header {
+                        margin-bottom: 10px !important;
+                        padding-bottom: 8px !important;
+                    }
+                    
+                    .test-name {
+                        font-size: 16px !important;
+                    }
+                    
+                    .test-status {
+                        padding: 4px 8px !important;
+                        font-size: 10px !important;
+                    }
+                    
+                    .test-metrics {
+                        grid-template-columns: repeat(4, 1fr) !important;
+                        gap: 10px !important;
+                        margin-bottom: 15px !important;
+                    }
+                    
+                    .metric-item {
+                        padding: 8px !important;
+                    }
+                    
+                    .metric-value {
+                        font-size: 14px !important;
+                    }
+                    
+                    .metric-label {
+                        font-size: 10px !important;
+                    }
+                    
+                    .test-summary-cards {
+                        grid-template-columns: repeat(4, 1fr) !important;
+                        gap: 10px !important;
+                        margin-bottom: 15px !important;
+                    }
+                    
+                    .summary-card {
+                        padding: 10px !important;
+                    }
+                    
+                    .card-icon {
+                        font-size: 16px !important;
+                        margin-bottom: 5px !important;
+                    }
+                    
+                    .card-label {
+                        font-size: 9px !important;
+                        margin-bottom: 3px !important;
+                    }
+                    
+                    .card-value {
+                        font-size: 12px !important;
+                    }
+                    
+                    .section-title {
+                        font-size: 14px !important;
+                        margin-bottom: 10px !important;
+                        padding-bottom: 5px !important;
+                    }
+                    
+                    .side-by-side-images {
+                        gap: 8px !important;
+                    }
+                    
+                    .image-container h4 {
+                        font-size: 10px !important;
+                        margin-bottom: 5px !important;
+                    }
+                    
+                    .image-container img {
+                        max-width: 40% !important;
+                        height: auto !important;
+                        max-height: 150px !important;
+                    }
+                    
+                    .difference-map-container img {
+                        max-width: 50% !important;
+                        height: auto !important;
+                        max-height: 180px !important;
+                    }
+                    
+                    .color-legend-simple {
+                        gap: 10px !important;
+                        margin-bottom: 8px !important;
+                        padding: 5px !important;
+                    }
+                    
+                    .legend-item {
+                        font-size: 10px !important;
+                        gap: 5px !important;
+                    }
+                    
+                    .legend-color {
+                        font-size: 12px !important;
+                    }
+                    
+                    .analysis-message {
+                        padding: 5px !important;
+                        margin-bottom: 5px !important;
+                    }
+                    
+                    .analysis-message h4 {
+                        font-size: 12px !important;
+                        margin-bottom: 5px !important;
+                    }
+                    
+                    .analysis-message p {
+                        font-size: 10px !important;
+                    }
+                    
+                    .footer {
+                        margin-top: 20px !important;
+                        padding: 15px !important;
+                        font-size: 10px !important;
+                    }
+                    
+                    .lightbox {
+                        display: none !important;
+                    }
+                    
+                    /* Force page breaks */
+                    .test-detail:nth-child(2n) {
+                        page-break-before: always !important;
+                    }
+                }
             </style>
         </head>
         <body>
@@ -727,6 +968,9 @@ class ReportGenerator:
                     <p class="subtitle">Powered by AIVisionTest</p>
                     <p class="description">Visual UI Test Automation Report</p>
                     <p class="date">Report Date: {{ report_date }}</p>
+                    <button id="downloadPdfBtn" class="download-pdf-btn" onclick="downloadAsPDF()">
+                        📄 Download PDF
+                    </button>
                 </div>
                 
                 <div class="stats-grid">
@@ -939,6 +1183,27 @@ class ReportGenerator:
                         closeLightbox();
                     }
                 });
+                
+                // PDF Download Function
+                function downloadAsPDF() {
+                    const button = document.getElementById('downloadPdfBtn');
+                    const originalText = button.innerHTML;
+                    
+                    // Button loading state
+                    button.innerHTML = '⏳ Generating PDF...';
+                    button.disabled = true;
+                    
+                    // Use browser's print to PDF functionality
+                    setTimeout(() => {
+                        window.print();
+                        
+                        // Reset button after a delay
+                        setTimeout(() => {
+                            button.innerHTML = originalText;
+                            button.disabled = false;
+                        }, 2000);
+                    }, 500);
+                }
             </script>
         </body>
         </html>
