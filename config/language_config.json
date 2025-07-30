@@ -1,0 +1,92 @@
+{
+    "en": {
+        "test_result": "Test Result",
+        "similarity_rate": "Similarity Rate",
+        "difference_rate": "Difference Rate", 
+        "difference_pixels": "Difference Pixels",
+        "passed": "PASSED",
+        "failed": "FAILED",
+        "reference_image": "Reference Image",
+        "test_image": "Test Image",
+        "difference_map": "Difference Map",
+        "orange_changed": "🟠 Orange → Changed Areas",
+        "white_unchanged": "⚪ White → Unchanged Areas",
+        "zoom_differences": "🔍 Zoom Small Differences",
+        "zoom_out": "🔍 Zoom Out",
+        "major_changes": "Major Changes Detected",
+        "moderate_changes": "Moderate Changes Detected", 
+        "minor_changes": "Minor Changes Detected",
+        "perfect_match": "Perfect Match",
+        "test_summary": "Test Summary",
+        "image_comparison": "Image Comparison",
+        "difference_analysis": "Difference Analysis",
+        "color_legend": "Color Legend",
+        "analysis_summary": "Analysis Summary",
+        "summary_cards": {
+            "total_tests": "Total Tests",
+            "passed_tests": "Passed Tests",
+            "failed_tests": "Failed Tests",
+            "pass_rate": "Success Rate",
+            "tests_executed": "Tests Executed",
+            "successful_tests": "Successful Tests",
+            "failed_tests_label": "Failed Tests",
+            "success_rate": "Success Rate"
+        },
+        "test_details": {
+            "similarity_score": "Similarity Score",
+            "difference_percentage": "Difference Percentage",
+            "different_pixels": "Different Pixels",
+            "test_time": "Test Time"
+        },
+        "footer": {
+            "powered_by": "Powered by UI Sentinel",
+            "description": "Visual UI Test Automation Tool",
+            "report_time": "Report generated on {date}"
+        }
+    },
+    "tr": {
+        "test_result": "Test Sonucu",
+        "similarity_rate": "Benzerlik Oranı",
+        "difference_rate": "Fark Oranı",
+        "difference_pixels": "Fark Piksel Sayısı", 
+        "passed": "GEÇTİ",
+        "failed": "KALDI",
+        "reference_image": "Referans Görüntü",
+        "test_image": "Test Görüntüsü",
+        "difference_map": "Fark Haritası",
+        "orange_changed": "🟠 Turuncu → Değişen Alanlar",
+        "white_unchanged": "⚪ Beyaz → Değişmeyen Alanlar",
+        "zoom_differences": "🔍 Küçük Farkları Büyüt",
+        "zoom_out": "🔍 Küçült",
+        "major_changes": "Büyük Değişiklik Tespit Edildi",
+        "moderate_changes": "Orta Düzey Değişiklik Tespit Edildi",
+        "minor_changes": "Küçük Değişiklikler Tespit Edildi", 
+        "perfect_match": "Mükemmel Eşleşme",
+        "test_summary": "Test Özeti",
+        "image_comparison": "Görsel Karşılaştırma",
+        "difference_analysis": "Fark Analizi",
+        "color_legend": "Renk Açıklaması",
+        "analysis_summary": "Analiz Özeti",
+        "summary_cards": {
+            "total_tests": "Toplam Test",
+            "passed_tests": "Geçen Test",
+            "failed_tests": "Kalan Test",
+            "pass_rate": "Başarı Oranı",
+            "tests_executed": "Çalıştırılan Test",
+            "successful_tests": "Başarılı Test",
+            "failed_tests_label": "Başarısız Test",
+            "success_rate": "Başarı Oranı"
+        },
+        "test_details": {
+            "similarity_score": "Benzerlik Skoru",
+            "difference_percentage": "Fark Yüzdesi",
+            "different_pixels": "Farklı Piksel",
+            "test_time": "Test Zamanı"
+        },
+        "footer": {
+            "powered_by": "UI Sentinel tarafından desteklenir",
+            "description": "Görsel UI Test Otomasyon Aracı",
+            "report_time": "Rapor {date} tarihinde oluşturuldu"
+        }
+    }
+} 

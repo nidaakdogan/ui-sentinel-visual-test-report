@@ -1,0 +1,53 @@
+{
+  "browser": {
+    "name": "chrome",
+    "headless": false,
+    "window_size": {
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "test_pages": [
+    {
+      "name": "google_homepage",
+      "url": "https://www.google.com",
+      "wait_time": 5,
+      "description": "Google ana sayfası testi",
+      "elements": ["search_box", "google_logo", "search_button"],
+      "special_settings": {
+        "tolerance": 15,
+        "threshold": 0.70,
+        "fail_threshold": 0.60,
+        "min_difference_pixels": 5000
+      }
+    },
+    {
+      "name": "github_homepage", 
+      "url": "https://github.com",
+      "wait_time": 3,
+      "description": "GitHub ana sayfası testi",
+      "elements": ["search_input", "signup_button", "github_logo"]
+    },
+    {
+      "name": "stackoverflow_homepage",
+      "url": "https://stackoverflow.com",
+      "wait_time": 3,
+      "description": "Stack Overflow ana sayfası testi",
+      "elements": ["search_input", "login_button", "stackoverflow_logo"]
+    }
+  ],
+  "comparison_settings": {
+    "threshold": 0.95,
+    "fail_threshold": 0.85,
+    "tolerance": 5,
+    "highlight_differences": true,
+    "save_differences": true,
+    "min_difference_pixels": 100
+  },
+  "report_settings": {
+    "generate_html": true,
+    "generate_json": true,
+    "include_screenshots": true,
+    "include_differences": true
+  }
+} 
