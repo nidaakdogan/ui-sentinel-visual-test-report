@@ -383,7 +383,7 @@ class ReportGenerator:
                 }
                 
                 /* Enhanced Visual Comparison Section */
-                                    .visual-comparison {
+                .visual-comparison {
                         margin-top: 15px;
                     }
                 
@@ -1091,7 +1091,7 @@ class ReportGenerator:
                                          alt="Difference Map"
                                          class="difference-map-image">
                                 </div>
-                            </div>
+                                </div>
 
                             <!-- Simple Color Legend -->
                             <div class="color-legend-simple">
