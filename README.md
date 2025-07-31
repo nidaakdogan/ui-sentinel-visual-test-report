@@ -53,44 +53,6 @@ python run_tests.py
 # reports/ klasöründeki HTML dosyalarını tarayıcıda aç
 ```
 
-## 📁 Proje Yapısı
-
-```
-AIVisionTest/
-├── src/                    # Ana kaynak kodlar
-│   ├── visual_test.py      # Test motoru
-│   ├── screenshot_capture.py # Screenshot alma
-│   ├── image_comparison.py # Görsel karşılaştırma
-│   └── report_generator.py # Rapor oluşturma
-├── config/                 # Konfigürasyon dosyaları
-│   ├── test_config.json    # Test ayarları
-│   └── language_config.json # Dil ayarları
-├── baseline/               # Referans görüntüler
-├── screenshots/            # Test görüntüleri
-├── results/                # Fark görüntüleri
-├── reports/                # Oluşturulan raporlar
-└── tests/                  # Test dosyaları
-```
-
-## ⚙️ Konfigürasyon
-
-### Test Ayarları (`config/test_config.json`)
-```json
-{
-  "test_pages": [
-    {
-      "name": "google_homepage",
-      "url": "https://www.google.com",
-      "tolerance": 15,
-      "threshold": 0.7
-    }
-  ],
-  "comparison_settings": {
-    "threshold": 0.95,
-    "tolerance": 5
-  }
-}
-```
 
 ### Dil Ayarları (`config/language_config.json`)
 ```json
